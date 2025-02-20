@@ -5,7 +5,12 @@ import '../App.css'
 
 function App() {
   const [count, setCount] = useState(0)
-
+  const [userState, setuserState]  = useState('')
+  fetch('users')
+  .then (r=>r.json())
+  .then (user=>
+    setuserState(user)
+  )
   return (
     <>
       <div>
